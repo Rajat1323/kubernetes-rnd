@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  my-node-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9999:9999"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+        reservations:
+          cpus: '0.1'
+    restart: unless-stopped
+
+
+  
